@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* DAZN-inspired theme */
+
+/* Hide scrollbar for filter chips */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  background-color: #060606;
+}
+
+/* Custom selection - neon yellow */
+::selection {
+  background-color: rgba(215, 255, 0, 0.3);
+  color: white;
+}
+
+/* Line clamp utility */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* DAZN-style hexagonal pattern background */
+.bg-hex-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='52' viewBox='0 0 60 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 15v22L30 52 0 37V15z' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 60px 52px;
+}
+
+/* Subtle grid pattern */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Animated gradient for hero section */
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(215,255,0,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 40% at 80% 50%, rgba(215,255,0,0.03) 0%, transparent 50%);
+}
+
+/* DAZN-style card hover effect */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 255, 0, 0.2);
+}
+
+/* Live pulse animation */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.live-pulse {
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+/* Glow effect for accent elements */
+.glow-yellow {
+  box-shadow: 0 0 30px rgba(215, 255, 0, 0.1), 0 0 60px rgba(215, 255, 0, 0.05);
+}
+
+.glow-red {
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.1), 0 0 60px rgba(239, 68, 68, 0.05);
+}
+
+/* DAZN-style button gradient */
+.btn-dazn {
+  background: linear-gradient(135deg, #D7FF00 0%, #A8FF00 100%);
+  color: #0A0A0A;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.btn-dazn:hover {
+  background: linear-gradient(135deg, #E0FF33 0%, #B8FF33 100%);
+  box-shadow: 0 0 40px rgba(215, 255, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.btn-dazn-outline {
+  border: 1.5px solid rgba(215, 255, 0, 0.3);
+  color: #D7FF00;
+  transition: all 0.2s ease;
+}
+.btn-dazn-outline:hover {
+  border-color: #D7FF00;
+  background: rgba(215, 255, 0, 0.05);
+}
+
+/* Keyframes for fade in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
